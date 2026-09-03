@@ -1,0 +1,12 @@
+{
+  "name": "smartagri",
+  "version": "1.0.0",
+  "description": "SmartAgri - Maharashtra Agriculture Market Intelligence System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
