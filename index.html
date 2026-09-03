@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SmartAgri - Smart Farming, Better Farming">
+
+    <title>SmartAgri | Smart Farming, Better Farming</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- =====================================================
+         LANGUAGE SELECTION PAGE
+    ====================================================== -->
+
+    <section id="languagePage" class="page language-page">
+
+        <div class="language-container">
+
+            <div class="brand-section">
+
+                <div class="brand-logo">🌱</div>
+
+                <h1>SmartAgri</h1>
+
+                <p>Smart Farming, Better Farming</p>
+
+            </div>
+
+            <div class="language-selection">
+
+                <h2>Choose Your Language</h2>
+
+                <p>Select your preferred language to continue</p>
+
+                <div class="language-options">
+
+                    <button
+                        type="button"
+                        class="language-btn"
+                        onclick="selectLanguage('en')">
+
+                        <span class="language-icon">🇬🇧</span>
+                        <span class="language-name">English</span>
+                        <span class="arrow">→</span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-btn"
+                        onclick="selectLanguage('hi')">
+
+                        <span class="language-icon">🇮🇳</span>
+                        <span class="language-name">हिंदी</span>
+                        <span class="arrow">→</span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-btn"
+                        onclick="selectLanguage('mr')">
+
+                        <span class="language-icon">🇮🇳</span>
+                        <span class="language-name">मराठी</span>
+                        <span class="arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <footer>
+                <p>Empowering Farmers with Smart Technology 🌾</p>
+            </footer>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AUTHENTICATION PAGE
+    ====================================================== -->
+
+    <section id="authPage" class="page auth-page hidden">
+
+        <div class="auth-container">
+
+            <div class="auth-brand">
+
+                <div class="brand-logo">🌱</div>
+
+                <h1>SmartAgri</h1>
+
+                <p>Smart Farming, Better Farming</p>
+
+            </div>
+
+
+            <!-- =================================================
+                 SIGN IN
+            ================================================== -->
+
+            <div class="auth-card">
+
+                <div id="signInForm" class="auth-form">
+
+                    <h2>Welcome Back</h2>
+
+                    <p class="form-subtitle">
+                        Sign in to continue to SmartAgri
+                    </p>
+
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+                    </div>
+
+
+                    <div class="forgot-password">
+
+                        <button
+                            type="button"
+                            onclick="showForgotPassword()">
+
+                            Forgot Password?
+
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        onclick="signIn()">
+
+                        Sign In
+
+                    </button>
+
+
+                    <p class="auth-switch">
+
+                        Don't have an account?
+
+                        <button
+                            type="button"
+                            onclick="showSignUp()">
+
+                            Sign Up
+
+                        </button>
+
+                    </p>
+
+
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="demo-btn"
+                        onclick="openDemoDashboard()">
+
+                        🌾 Explore Demo Dashboard
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     SIGN UP
+                ================================================== -->
+
+                <div id="signUpForm" class="auth-form hidden">
+
+                    <h2>Create Account</h2>
+
+                    <p class="form-subtitle">
+                        Join SmartAgri and access smart farming tools
+                    </p>
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="signupName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+
+                    <!-- MOBILE -->
+
+                    <div class="form-group">
+
+                        <label for="signupMobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="signupMobile"
+                            placeholder="Enter 10-digit mobile number"
+                            maxlength="10"
+                            autocomplete="tel"
+                            required>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="signupEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group">
+
+                        <label for="signupState">
+                            State
+                        </label>
+
+                        <select id="signupState" required>
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option value="Maharashtra">
+                                Maharashtra
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CITY -->
+
+                    <div class="form-group">
+
+                        <label for="signupCity">
+                            City
+                        </label>
+
+                        <select id="signupCity" required>
+
+                            <option value="">
+                                Select City
+                            </option>
+
+                            <option value="Kopargaon">
+                                Kopargaon
+                            </option>
+
+                            <option value="Ahmednagar">
+                                Ahmednagar
+                            </option>
+
+                            <option value="Nashik">
+                                Nashik
+                            </option>
+
+                            <option value="Pune">
+                                Pune
+                            </option>
+
+                            <option value="Nagpur">
+                                Nagpur
+                            </option>
+
+                            <option value="Mumbai">
+                                Mumbai
+                            </option>
+
+                            <option value="Chhatrapati Sambhajinagar">
+                                Chhatrapati Sambhajinagar
+                            </option>
+
+                            <option value="Kolhapur">
+                                Kolhapur
+                            </option>
+
+                            <option value="Solapur">
+                                Solapur
+                            </option>
+
+                            <option value="Satara">
+                                Satara
+                            </option>
+
+                            <option value="Sangli">
+                                Sangli
+                            </option>
+
+                            <option value="Jalgaon">
+                                Jalgaon
+                            </option>
+
+                            <option value="Dhule">
+                                Dhule
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MANDI -->
+
+                    <div class="form-group">
+
+                        <label for="signupMandi">
+                            Preferred Mandi
+                        </label>
+
+                        <select id="signupMandi" required>
+
+                            <option value="">
+                                Select Preferred Mandi
+                            </option>
+
+                            <option value="Kopargaon Mandi">
+                                Kopargaon Mandi
+                            </option>
+
+                            <option value="Ahmednagar Mandi">
+                                Ahmednagar Mandi
+                            </option>
+
+                            <option value="Nashik Mandi">
+                                Nashik Mandi
+                            </option>
+
+                            <option value="Pune Mandi">
+                                Pune Mandi
+                            </option>
+
+                            <option value="Lasalgaon Mandi">
+                                Lasalgaon Mandi
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- LAND AREA -->
+
+                    <div class="form-group">
+
+                        <label for="signupAcres">
+                            Land Area (Acres)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="signupAcres"
+                            placeholder="Enter land area"
+                            min="0"
+                            step="0.01">
+
+                    </div>
+
+
+                    <!-- ROLE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            I am a:
+                        </label>
+
+                        <div class="role-options">
+
+                            <label class="role-option">
+
+                                <input
+                                    type="radio"
+                                    name="userRole"
+                                    value="farmer"
+                                    onchange="handleRoleChange()"
+                                    required>
+
+                                <span>👨‍🌾 Farmer</span>
+
+                            </label>
+
+
+                            <label class="role-option">
+
+                                <input
+                                    type="radio"
+                                    name="userRole"
+                                    value="agriculture_officer"
+                                    onchange="handleRoleChange()">
+
+                                <span>👨‍💼 Agriculture Officer</span>
+
+                            </label>
+
+
+                            <label class="role-option">
+
+                                <input
+                                    type="radio"
+                                    name="userRole"
+                                    value="normal_person"
+                                    onchange="handleRoleChange()">
+
+                                <span>👤 Normal Person</span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FARMER CROP -->
+
+                    <div
+                        id="farmerCropSection"
+                        class="form-group hidden">
+
+                        <label for="signupCrop">
+                            Which crop do you grow?
+                        </label>
+
+                        <select id="signupCrop">
+
+                            <option value="">
+                                Select Primary Crop
+                            </option>
+
+                            <option value="onion">
+                                Onion
+                            </option>
+
+                            <option value="wheat">
+                                Wheat
+                            </option>
+
+                            <option value="soybean">
+                                Soybean
+                            </option>
+
+                            <option value="cotton">
+                                Cotton
+                            </option>
+
+                            <option value="sugarcane">
+                                Sugarcane
+                            </option>
+
+                            <option value="maize">
+                                Maize
+                            </option>
+
+                            <option value="grapes">
+                                Grapes
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="signupPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        onclick="signUp()">
+
+                        Create Account
+
+                    </button>
+
+
+                    <p class="auth-switch">
+
+                        Already have an account?
+
+                        <button
+                            type="button"
+                            onclick="showSignIn()">
+
+                            Sign In
+
+                        </button>
+
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORGOT PASSWORD
+                ================================================== -->
+
+                <div
+                    id="forgotPasswordForm"
+                    class="auth-form hidden">
+
+                    <h2>Reset Password</h2>
+
+                    <p class="form-subtitle">
+                        Enter your email and we'll send you
+                        a password reset link.
+                    </p>
+
+
+                    <div class="form-group">
+
+                        <label for="resetEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="resetEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        onclick="resetPassword()">
+
+                        Send Reset Link
+
+                    </button>
+
+
+                    <p class="auth-switch">
+
+                        Remember your password?
+
+                        <button
+                            type="button"
+                            onclick="showSignIn()">
+
+                            Sign In
+
+                        </button>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <section
+        id="dashboardPage"
+        class="page dashboard-page hidden">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside id="sidebar" class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="sidebar-brand">
+
+                    <span class="brand-logo">
+                        🌱
+                    </span>
+
+                    <span>
+                        SmartAgri
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="close-menu"
+                    onclick="closeSidebar()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <button
+                    type="button"
+                    class="menu-item active"
+                    onclick="showDashboardHome()">
+
+                    <span>🏠</span>
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('marketPrices')">
+
+                    <span>📊</span>
+                    <span>Market Prices</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('weather')">
+
+                    <span>🌦️</span>
+                    <span>Weather</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('schemes')">
+
+                    <span>🏛️</span>
+                    <span>Government Schemes</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('cropScanner')">
+
+                    <span>🌾</span>
+                    <span>Crop Scanner</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('aiAssistant')">
+
+                    <span>🤖</span>
+                    <span>AI Assistant</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('aiVoice')">
+
+                    <span>🎙️</span>
+                    <span>AI Voice Assistant</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('labour')">
+
+                    <span>👷</span>
+                    <span>Labour</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('machinery')">
+
+                    <span>🚜</span>
+                    <span>Machinery</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('settings')">
+
+                    <span>⚙️</span>
+                    <span>Settings</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="menu-item"
+                    onclick="openFeature('about')">
+
+                    <span>ℹ️</span>
+                    <span>About SmartAgri</span>
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="logout-btn"
+                    onclick="logout()">
+
+                    🚪 Logout
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- SIDEBAR OVERLAY -->
+
+        <div
+            id="sidebarOverlay"
+            class="sidebar-overlay hidden"
+            onclick="closeSidebar()">
+        </div>
+
+
+        <!-- =================================================
+             MAIN DASHBOARD
+        ================================================== -->
+
+        <div class="dashboard-main">
+
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+            <header class="dashboard-header">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="hamburger-btn"
+                    onclick="openSidebar()">
+
+                    ☰
+
+                </button>
+
+
+                <!-- BRAND / TITLE -->
+
+                <div class="dashboard-title">
+
+                    <h1>
+                        SmartAgri
+                    </h1>
+
+                    <p>
+                        Smart Farming, Better Farming
+                    </p>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="header-right">
+
+
+                    <!-- ONLINE / OFFLINE STATUS -->
+
+                    <div
+                        id="connectionStatus"
+                        class="connection-status">
+
+                        <span id="connectionDot">
+                            ●
+                        </span>
+
+                        <span id="connectionText">
+                            Online
+                        </span>
+
+                    </div>
+
+
+                    <!-- LANGUAGE -->
+
+                    <select
+                        id="dashboardLanguage"
+                        onchange="changeDashboardLanguage(this.value)">
+
+                        <option value="en">
+                            English
+                        </option>
+
+                        <option value="hi">
+                            हिंदी
+                        </option>
+
+                        <option value="mr">
+                            मराठी
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 DASHBOARD CONTENT
+            ================================================== -->
+
+            <main class="dashboard-content">
+
+
+                <!-- =================================================
+                     WELCOME
+                ================================================== -->
+
+                <section class="welcome-section">
+
+                    <div>
+
+                        <h2>
+                            Welcome to SmartAgri 🌱
+                        </h2>
+
+                        <p>
+                            Agricultural intelligence at your fingertips.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     LOCATION
+                ================================================== -->
+
+                <section class="location-section">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            📍 Select Your Location
+                        </h2>
+
+                        <p>
+                            Get weather and market information
+                            for your location
+                        </p>
+
+                    </div>
+
+
+                    <div class="location-controls">
+
+
+                        <div class="location-field">
+
+                            <label for="stateSelect">
+                                State
+                            </label>
+
+                            <select id="stateSelect">
+
+                                <option value="Maharashtra">
+                                    Maharashtra
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="location-field">
+
+                            <label for="citySelect">
+                                City
+                            </label>
+
+                            <select id="citySelect">
+
+                                <option value="">
+                                    Select City
+                                </option>
+
+                                <option value="Kopargaon">
+                                    Kopargaon
+                                </option>
+
+                                <option value="Ahmednagar">
+                                    Ahmednagar
+                                </option>
+
+                                <option value="Nashik">
+                                    Nashik
+                                </option>
+
+                                <option value="Pune">
+                                    Pune
+                                </option>
+
+                                <option value="Nagpur">
+                                    Nagpur
+                                </option>
+
+                                <option value="Mumbai">
+                                    Mumbai
+                                </option>
+
+                                <option value="Chhatrapati Sambhajinagar">
+                                    Chhatrapati Sambhajinagar
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="location-btn"
+                            onclick="updateLocation()">
+
+                            Get Information
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     MARKET PRICES
+                ================================================== -->
+
+                <section
+                    id="marketPrices"
+                    class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2>
+                                📊 Live Mandi Prices
+                            </h2>
+
+                            <p>
+                                Current agricultural market prices
+                            </p>
+
+                        </div>
+
+                        <span class="live-status">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <!-- PRICE SUMMARY -->
+
+                    <div class="market-summary">
+
+
+                        <div class="price-summary-card">
+
+                            <span>
+                                Highest Price
+                            </span>
+
+                            <strong id="highestPrice">
+                                ₹--
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-summary-card">
+
+                            <span>
+                                Lowest Price
+                            </span>
+
+                            <strong id="lowestPrice">
+                                ₹--
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-summary-card">
+
+                            <span>
+                                Average Price
+                            </span>
+
+                            <strong id="averagePrice">
+                                ₹--
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MARKET TABLE -->
+
+                    <div class="market-table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Crop</th>
+
+                                    <th>Market</th>
+
+                                    <th>Min Price</th>
+
+                                    <th>Max Price</th>
+
+                                    <th>Modal Price</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="marketPriceTable">
+
+                                <tr>
+
+                                    <td colspan="5">
+                                        Loading market prices...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     WEATHER
+                ================================================== -->
+
+                <section
+                    id="weather"
+                    class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2>
+                                🌦️ Live Weather
+                            </h2>
+
+                            <p>
+                                Weather information for your selected location
+                            </p>
+
+                        </div>
+
+                        <span class="live-status">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="weather-card">
+
+
+                        <div class="weather-location">
+
+                            <span>
+                                📍
+                            </span>
+
+                            <strong id="weatherLocation">
+                                Select a city
+                            </strong>
+
+                        </div>
+
+
+                        <div class="weather-main">
+
+                            <span
+                                id="weatherIcon"
+                                class="weather-icon">
+
+                                🌤️
+
+                            </span>
+
+
+                            <div>
+
+                                <strong id="temperature">
+                                    --°C
+                                </strong>
+
+                                <p id="weatherCondition">
+                                    Weather data will appear here
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="weather-details">
+
+
+                            <div>
+
+                                <span>💧</span>
+
+                                <p>
+                                    Humidity
+                                </p>
+
+                                <strong id="humidity">
+                                    --%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>💨</span>
+
+                                <p>
+                                    Wind
+                                </p>
+
+                                <strong id="windSpeed">
+                                    -- km/h
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>🌧️</span>
+
+                                <p>
+                                    Rain
+                                </p>
+
+                                <strong id="rainChance">
+                                    --%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     FEATURE CONTENT
+                ================================================== -->
+
+                <section
+                    id="featureContent"
+                    class="dashboard-section hidden">
+
+                    <div class="feature-placeholder">
+
+                        <div
+                            id="featureIcon"
+                            class="feature-icon">
+
+                            🌱
+
+                        </div>
+
+                        <h2 id="featureTitle">
+                            SmartAgri Feature
+                        </h2>
+
+                        <p id="featureDescription">
+                            This feature will be available here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 SmartAgri
+                </p>
+
+                <p>
+                    Smart Farming, Better Farming
+                </p>
+
+            </footer>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
